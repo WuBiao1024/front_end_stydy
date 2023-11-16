@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function Person(){
+            if(!new.target)
+                throw new Error('Please use new apply an object!')
+            this.name='wubiao';
+        }
+
+        let p = new Person();
+
+        function Animal(){
+            if (!(this instanceof Animal)) 
+                 throw new Error('Please use new apply an object!')
+            this.name='Cat'
+        }
+
+        let cat = new Animal();
+        // let Cat1 =  Animal();
+    </script>
+</body>
+</html>

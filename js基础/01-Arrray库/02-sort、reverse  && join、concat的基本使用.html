@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    //默认是按照字典顺序排序。排序后，原数组将被改变
+    /**sort:
+    * sort的参数函数本身接受两个参数，表示进行比较
+    * 的两个数组成员。如果该函数的返回值大于0，表示
+    * 第一个成员排在第二个成员后面；其他情况下，都是
+    * 第一个元素排在第二个元素前面。
+    * */
+    var arr = [1,4,3,6,4,8,2,4,6]
+    var arr2 = arr.sort((a,b)=>a-b)//升序排序,排序完成以后原数组发生了变化
+    console.log(arr2);
+    console.log(arr2 === arr);//true
+
+    //reserve
+    var arr3 = arr.reverse() //倒序以后原数组发生变化
+    console.log(arr3);
+    console.log(arr === arr3);
+
+    //join 指定一个分隔符，把数组转化为字符串, 原数组不发生变化。
+    let strArr = arr.join(' ')
+    console.log(strArr);//8 6 6 4 4 4 3 2 1
+
+    // 通过call方法改变函数的运行环境，也可以使得join方法用于字符串或者类似数组的对象
+    let call1 = Array.prototype.join.call('helloword','-');
+    console.log(call1)//h-e-l-l-o-w-o-r-d
+
+    let obj = {
+        0:1,
+        1:2,
+        2:3,
+        length:3
+    }
+    let call2 = Array.prototype.join.call(obj,'--');
+    console.log(call2)//1--2--3
+
+    //concat可以用于合并多个数组，将新的数组成员添加到原数组的后面，返回一个新的数组，原数组不变
+    let objArr = Array.prototype.slice.call(obj);
+    let ts = objArr.concat(arr2,arr);
+    console.log(ts);
+
+</script>
+
+</body>
+</html>

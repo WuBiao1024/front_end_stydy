@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>结构伪类</title>
+    <style>
+        /*独生子女span*/
+        span:only-child{
+            color: #ff4a7b;
+        }
+        /*没有同类型兄弟的元素*/
+        span:only-of-type{
+            color: blueviolet;
+        }
+        /*根元素 html*/
+        :root{
+            background-color: aliceblue;
+        }
+        /*div中没有内容 文本空格都不能有*/
+        div:empty{
+            width: 200px;
+            height: 100px;
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <div>
+        <span>Lorem ipsum dolor sit amet.</span>
+<!--        <div>我在字体不变红</div>-->
+    </div>
+    <div>
+        <span id="span1">Lorem ipsum.</span>
+        <p class="p1">Lorem ipsum dolor.</p>
+        <p class="p2">Itaque, necessitatibus, reprehenderit.</p>
+        <p class="p3">Dolores, ipsam, perspiciatis!</p>
+        <p class="p4">In, quia, saepe?</p>
+    </div>
+    <div></div>
+
+
+</div>
+</body>
+</html>

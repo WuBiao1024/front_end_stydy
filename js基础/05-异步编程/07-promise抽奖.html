@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise抽奖</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+</head>
+<body>
+<div class="container">
+  <h2 class="page-header">Promise</h2>
+  <button class="btn btn-primary"  id="btn">抽奖</button>
+</div>
+
+<script type="text/javascript">
+    function rand(m,n){
+        return Math.ceil(Math.random() * (n-m+1)) + m -1
+    }
+
+    const btn = document.querySelector("#btn");
+
+    btn.addEventListener('click',function (){
+/*   setTimeout(()=>{
+            //30% 1-100
+            //获取1-100的随机数
+            let n=rand(1,100)
+            if (n<30){
+                console.log(`中奖了！${n}`)
+            }else {
+                console.log('再接再厉');
+            }
+        },1000)*/
+
+        const p = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                //30% 1-100
+                //获取1-100的随机数
+                let n=rand(1,100)
+                if (n<30){
+                    resolve(n) //将promise的状态设置为成功
+                }else {
+                    reject(n)//将promise的状态设置为失败
+                }
+            },1000)
+        })
+
+        //两个回调函数，成功回调第一个，失败回调第二个
+        p.then((val)=>{
+            console.log(`中奖了！${val}`)
+        },(reason)=>{
+            console.log(`再接再厉${reason}`);
+        })
+    })
+
+
+</script>
+</body>
+</html>

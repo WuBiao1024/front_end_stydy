@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象的解构赋值</title>
+</head>
+<body>
+<script type="text/javascript">
+    let {foo, bar} = {foo: 'aaa', bar: 'bbb'};
+    //foo  "aaa"
+    //bar  "bbb"
+    //顺序可以不对，但是属性名必须吻合, 才能解构赋值成功
+    //赋值失败就是undefined
+
+    /*应用：*/
+    // let {abs,sin,cos,floor,random,min,max,ceil} = Math
+    let {log} = console;
+    log('hello')
+
+    //属性名不同的时候，不能再简写
+    let {abs: myAbs} = Math
+    myAbs(-5) //5
+
+    let obj = {
+        p: [
+            'Hello',
+            {y: 'World'}
+        ]
+    };
+
+    let {p: [x, {y}]} = obj;
+    // x "Hello"
+    //y  "World"
+
+    //对已经申明的对象进行解构赋值
+    let k;
+    // {x} = {x:1};
+    //报错，因为js会把{x}当作代码块
+    // 正确的写法
+    ({x:k} = {x: 1})
+
+    //把数组当作对象进行结构
+    let arr = [1,2,3,4,5]
+     let {0:first, [arr.length-1]: last} = arr
+    //[arr.length-1] 方括号这种写法，属于“属性名表达式”
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>否定伪类</title>
+    <style>
+        /*div的后代，但是没有no_red类名*/
+        div > p:not(.no_red) {
+            color: red;
+        }
+        /*不能以pre开头*/
+        div>p:not([title^="pre"]){
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>
+        <span>Lorem ipsum dolor sit amet.</span>
+    </div>
+    <div>
+        <span id="span1">Lorem ipsum.</span>
+        <p class="p1">Lorem ipsum dolor.</p>
+        <p class="p2 no_red">no_red</p>
+        <p class="p3">Dolores, ipsam, perspiciatis!</p>
+        <p class="p4">In, quia, saepe?</p>
+        <p class="p"  title="pre-test">Lorem ipsum dolor.</p>
+        <p class="p"  title="pre-test">Odit, tenetur ullam.</p>
+        <p class="p"  title="test">Esse, laudantium, sunt.</p>
+        <p class="p" title="pre-test"> Delectus, dolorum fugit?</p>
+    </div>
+</div>
+</body>
+</html>

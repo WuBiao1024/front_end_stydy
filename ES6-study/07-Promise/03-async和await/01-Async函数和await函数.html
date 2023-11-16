@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Async函数与Await函数</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    //async函数的返回值是一个Peomise对象
+    async function main(){
+        //返回值为非promise的对象 Promise对象的状态为 fulfilled 结果为 返回值
+        // return 111
+        //返回值为promise的对象 返回什么 Promise对象就是什么
+        return Promise.resolve('hello')
+        // return Promise.reject('错误')
+        //抛出异常，Promise对象的状态为 rejected 结果为抛出的异常
+        // throw '异常'
+    }
+
+/*    let result  = main();
+    console.log(result);
+    */
+
+    //await表达式
+    /*
+    * 1. 一般右侧为promise对象,返回值是promise对象执行成功的值
+    * 2. 如果是其它表达式,await的返回值就是其它表达式的值
+    * 3. await必须写在async函数函数中,但是async函数中可以没有await
+    * 4. 如果await右边的promise执行失败了就会抛出异常,需要通过try..catch...去捕获处理,此时结果为undefined
+    * */
+    async function test(){
+        //promise
+        // let p = Promise.resolve('成功')
+        let p = Promise.reject('失败')
+
+        let result
+        try{
+             result = await p
+        }catch (e){
+            console.log(e);
+        }
+
+
+        //表达式
+        // let result = await 20
+        console.log(result)
+    }
+
+    test()
+
+
+</script>
+
+</body>
+</html>

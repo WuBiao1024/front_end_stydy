@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪类选择器概念</title>
+    <style>
+        /*lvha*/
+        /* .baidu{
+           color: green;
+         }*/
+        /*像类不是类 元的的特殊状态的一种描述*/
+        /*选中没有访问过的*/
+
+        /*注意顺序，后来居上*/
+        /*没有访问过*/
+        a:link {
+            color: green;
+        }
+
+        /*访问过*/
+        a:visited {
+            color: red;
+        }
+
+        /*鼠标悬浮*/
+        a:hover {
+            color: blueviolet;
+        }
+
+        /*激活(鼠标按下没有松手)*/
+        a:active {
+            color: orange;
+        }
+
+        /*hover和active是所有元素都有的*/
+        span:hover {
+            color: aqua;
+        }
+
+        span:active {
+            color: red;
+        }
+
+        /*focus只有表单类元素才有用*/
+        select:hover, input:focus {
+            background-color: aqua;
+        }
+
+    </style>
+
+</head>
+<body>
+<a href="http://www.baidu.com" class="baidu">百度</a>
+<a href="https://www.jd.com">京东</a>
+<br>
+<br>
+<span>
+    Lorem ipsum dolor sit amet, consectetur.
+</span>
+<br>
+<br>
+<input type="text"/><br><br>
+<input type="text"/><br><br>
+<input type="text"/><br><br>
+<select name="lorem" id="lorem">
+    <option value="">Lorem.</option>
+    <option value="">Aspernatur.</option>
+    <option value="">Eius?</option>
+    <option value="">Obcaecati?</option>
+</select>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ch-ZN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--04-esmjs.html:11 Uncaught SyntaxError: Cannot use import statement outside a module-->
+<script type="module">
+    import add from "./esmjs/add.js";
+    import sub from "./esmjs/sub.js";
+    console.log(add(1, 2));
+    console.log(sub(10, 5));
+</script>
+
+<!-- 命令 npx http-server  -->
+</body>
+</html>

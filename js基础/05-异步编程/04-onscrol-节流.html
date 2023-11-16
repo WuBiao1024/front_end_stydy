@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script>
+       var obj = {
+           name:'aaa',
+           f: function (name){
+               this.name = name
+           }
+       }
+
+       var obj2 = {
+           age:20
+       }
+
+       var f2 = obj.f.bind(obj2,'yua')
+
+        function throttle(func, delay) {
+            let canRun = true;
+            return function () {
+                if (!canRun) return;
+                canRun = false;
+                setTimeout(function () {
+                    func();
+                    canRun = true;
+                }, delay);
+            };
+        }
+
+        function handleScroll() {
+            console.log("Handling scroll...");
+            // 实际的滚动处理逻辑在这里
+        }
+
+
+
+        const throttledScroll = throttle(handleScroll, 300); // 300毫秒的节流间隔
+
+    </script>
+
+    <style>
+        div {
+            border: 1px solid black;
+            width: 100px;
+            height: 200px;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+<div onscroll="throttledScroll()">
+    hello, my name is WuBiao, a student who is studying..
+    hello, my name is WuBiao, a student who is studying..
+    hello, my name is WuBiao, a student who is studying..
+    hello, my name is WuBiao, a student who is studying..
+    hello, my name is WuBiao, a student who is studying..
+    hello, my name is WuBiao, a student who is studying..
+    hello, my name is WuBiao, a student who is studying..
+    hello, my name is WuBiao, a student who is studying..
+    hello, my name is WuBiao, a student who is studying..
+
+    <br>
+    <br>
+    hello, my name is WuBiao, a student who is studying..
+    hello, my name is WuBiao, a student who is studying..
+    hello, my name is WuBiao, a student who is studying..
+    hello, my name is WuBiao, a student who is studying..
+    hello, my name is WuBiao, a student who is studying..
+
+</div>
+</body>
+</html>

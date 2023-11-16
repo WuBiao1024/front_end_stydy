@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <style>
+        .test{
+            border: 1px black solid;
+            height: 100px;
+            width: 100px;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+<h2>写一个简单的防抖</h2>
+<input oninput="debounceSearch(value)" type="text"/>
+
+
+<h2>写一个节流的示例</h2>
+<div class="test" id="myDiv" >
+    Hello , I'm WuBiao.I'm a web Engineer.
+    Hello , I'm WuBiao.I'm a web Engineer.
+    Hello , I'm WuBiao.I'm a web Engineer.
+    Hello , I'm WuBiao.I'm a web Engineer.
+    <br><br>
+    Hello , I'm WuBiao.I'm a web Engineer.
+    Hello , I'm WuBiao.I'm a web Engineer.
+    Hello , I'm WuBiao.I'm a web Engineer.
+    Hello , I'm WuBiao.I'm a web Engineer.
+    Hello , I'm WuBiao.I'm a web Engineer.
+    Hello , I'm WuBiao.I'm a web Engineer.
+</div>
+
+<script type="text/javascript">
+    function search(val) {
+        //axios请求 300ms
+        console.log(val)
+    }
+    function debounce(func, delay) {
+        let timerId;
+
+        return function () {
+            clearTimeout(timerId)
+            let _this = this;
+            // console.log(this,arguments)
+            let args = arguments;
+            timerId = setTimeout(() => {
+                func.call(_this, args[0])
+            }, delay)
+        }
+    }
+    let debounceSearch = debounce(search,300)
+
+    //节流
+    let myDiv = document.querySelector('#myDiv');
+
+    function fn(){
+        //滚动的逻辑
+        console.log('鼠标滚动了');
+    }
+     function throttled(fn,delay){
+        let canRun = true;
+        return function (){
+            if (!canRun) return
+            canRun = false;
+            let _this = this;
+            let args = arguments;
+            setTimeout(()=>{
+                fn.call(_this,args)
+                canRun = true
+            },delay)
+        }
+     }
+
+     let throttledScroll = throttled(fn,300)
+    myDiv.addEventListener('scroll',throttledScroll)
+
+
+
+</script>
+
+</body>
+</html>

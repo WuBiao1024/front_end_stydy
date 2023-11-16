@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>push、pop、shift、unshift</title>
+
+</head>
+<body>
+<script type="text/javascript">
+    // var arr = new Array(1, 2, 1, "111", {name: "wubiao", job: "前端开发工程师"})
+    var arr = [1, 2, 1, "111", {name: "wubiao", job: "前端开发工程师"}]
+    //push 数组末尾添加一个项
+    arr.push("item_push1")
+    arr.push("item_push2")
+    console.log(arr);//[1, 2, 1, '111', {…}, 'item_push1', 'item_push2']
+
+    //pop取出数组的最后一位
+    var test = arr.pop()
+    console.log(test);//"item_push2"
+    console.log(arr);//[1, 2, 1, '111', {…}, 'item_push1']
+   /* 以上push、pop两者配合使用就是栈（stack）*/
+
+    //shift移除数组头部的一个元素
+    arr.shift()
+    console.log(arr);//[2, 1, '111', {…}, 'item_push1']
+    /*shift和push配合使用，可以当做先进先出的队列来使用*/
+
+    //unshift移除数组头部的一个元素
+    arr.unshift("unshitf_item")
+    console.log(arr);//['unshitf_item', 2, 1, '111', {…}, 'item_push1']
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

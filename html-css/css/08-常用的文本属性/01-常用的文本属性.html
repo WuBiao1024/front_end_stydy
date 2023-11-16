@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zn-CH">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock学前端</title>
+    <style>
+        .div1{
+            color: rgb(255,0,0);
+        }
+        .div2{
+            color: red;
+        }
+        .div3{
+            color: rgba(255,0,0,0.5);
+        }
+        .div4{
+            color: #00ff00;
+        }
+        .div5{
+            color: hsla(0,100%,50%,0.5);
+        }
+        .div6,.div7{
+            /*字母间距*/
+            letter-spacing: 20px;
+        }
+        .div8{
+            /*单词间距 以空格区分单词*/
+            word-spacing: 30px;
+        }
+        .a,ins,del{
+            text-decoration:none;
+        }
+        .div9{
+            /*下 虚线*/
+            text-decoration: underline dotted;
+        }
+        .div10{
+            /*中间 红色 波浪线*/
+            text-decoration: red line-through wavy;
+        }
+        .div11{
+            /*上 波浪线 红色*/
+            text-decoration: red overline wavy;
+        }
+        .div12{
+            font-size: 1em;
+            text-indent: 2em;
+        }
+        .div13{
+            text-align: center;
+        }
+        .div14{
+            font-size: 50px;
+            background-color: skyblue;
+        }
+        .div15{
+            font-size: 35px;
+            font-family: "Microsoft YaHei",serif;
+            background-color: skyblue;
+            /*第一种写法*/
+            line-height: 50px;
+            /*height: 40px;*/
+
+            /*第二种写法*/
+            /*line-height: normal;*/ /*默认值*/
+
+            /*第三种写法*/
+            /*line-height: 1.5;*/
+
+            /*第四种写法*/
+            /*line-height: 150%;*/
+        }
+
+        .div16{
+            height: 200px;
+            font-size: 20px;
+            background-color: palegreen;
+            font-family: "隶书",serif ;
+
+            /*向下 200*2-20*/
+            /*line-height: 380px; */
+
+            /*居中*/
+            line-height: 200px;
+        }
+        .div17{
+            font-size: 30px;
+            height: 100px;
+            background-color: skyblue;
+        }
+        span{
+            background-color: deeppink;
+            font-size: 16px;
+            vertical-align: center; /*top middle bottom center baseline(基线)*/
+        }
+        img{
+            height: 50px;
+            /*当前行的高度由较高的一个决定。调整其中一个的vertical-align,行高较小的一个就会上下移动*/
+            vertical-align: bottom;
+            /*vertical-align: top;*/
+        }
+    </style>
+</head>
+<body>
+<h1>1. 文本颜色</h1>
+<div class="div1">Lorem.</div>
+<div class="div2">Dolores.</div>
+<div class="div3">Cum.</div>
+<div class="div4">Maiores!</div>
+<div class="div5">A?</div>
+
+<hr>
+<hr>
+<h1>2. 文本间距</h1>
+<div class="div6">Dolore. test</div>
+<div class="div7">You get a dream, you gotta protect it! 哈哈 </div>
+<div class="div8">You get a dream, you gotta protect it! 哈哈,世界你好 好好 </div>
+
+<hr>
+<hr>
+<h1>3. 文本线 text-decoration</h1>
+<div class="div9">line-through</div>
+<div class="div10">underline</div>
+<hr>
+<div class="div11">overline</div>
+<ins class="ins">ins</ins>
+<del class="del">del</del>
+<br>
+<a href="www.baidu.com" class="a">百度</a>
+
+<hr>
+<hr>
+<h1>4. text-indent 文本缩进</h1>
+<div class="div12">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium assumenda deleniti deserunt dolores eos exercitationem impedit magni vero, voluptate! Alias architecto cupiditate delectus doloribus facere fuga impedit maxime minima? Cumque.</div>
+
+<hr>
+<hr>
+<h1>5. 文本对齐_水平</h1>
+<div class="div13">Rock Study 文本对齐</div>
+
+<hr>
+<hr>
+<h1>6. font-size详解</h1>
+<div class="div14">Rock Study font-size详解</div>
+<span style="font-size: 50px; font-family: '微软雅黑',serif">ROCK</span>
+<span style="font-size: 50px; font-family: '华文楷体',serif">ROCK</span>
+
+<hr>
+<hr>
+<h1>7. line-height</h1>
+<div class="div15">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis distinctio ex odit repellendus reprehenderit totam voluptatem. Autem blanditiis dolorem, doloremque, esse et ipsum modi quam quasi repudiandae temporibus unde, voluptate!</div>
+
+<hr>
+<hr>
+<h1>8. 垂直对齐</h1>
+<div class="div16">Rock Study</div>
+
+<hr>
+<hr>
+<h1>9. vertical-align</h1>
+<div class="div17">
+    Rock StudyX
+    <span>span contentX</span>
+    Rock StudyX
+    <img src="../../logo.png" alt="logo">
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise</title>
+</head>
+<body>
+<script>
+<!--  promise最后的状态一旦确定就不会变化-->
+  let promise1 = new Promise((resolve, reject)=>{
+    console.log("promise1");
+    resolve(['hello','word']);
+    // return 1;
+  })
+console.log(promise1);
+/*  let promise2 = promise1.then((a)=>{
+    console.log("@@@@",a,b);
+  })*/
+
+
+// console.log(promise1 === promise2);
+
+// console.log("1",promise1);
+// console.log("2",promise2);
+
+
+/*console.log('---考法二---');
+//等价
+// function test1(){
+//   return Promise.resolve(1).then((n)=> {
+//     console.log(n)
+//   })
+// }
+async function test(){
+  console.log(0);
+  const num = await 1;
+  console.log(num);
+}
+test();
+console.log("hello")*/
+
+
+
+</script>
+</body>
+</html>

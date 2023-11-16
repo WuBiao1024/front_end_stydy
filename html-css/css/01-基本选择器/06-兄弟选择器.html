@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>兄弟选择器</title>
+    <style>
+        /*找div后，所有的兄弟，找一个。不往上找*/
+        div~p{
+            color: green;
+        }
+
+        /*找div后，紧紧相连的，找一个。不往上找 （必须相邻且是兄弟且是p[有两个]）*/
+        div+p{
+            color: red;
+        }
+        /*除了第一个li以外的li*/
+        li+li{
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+<div>Lorem ipsum.</div>
+<div>Lorem ipsum.</div>
+<p>Lorem.</p>
+<p>Lorem.</p>
+<div>Lorem ipsum.</div>
+<p>Lorem.</p>
+<ul>
+    <li class="li1">Lorem.</li>
+    <li class="li2">Ad.</li>
+    <li class="li3">Consectetur!</li>
+    <li class="li4">Veniam?</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zn-CH">
+<head>
+    <meta charset="UTF-8">
+    <title>04-元素选择器的优先级</title>
+    <style>
+        p{
+            color: red;
+        }
+        .p1{
+            color: pink;
+        }
+        /*通配选择器*/
+        * {
+            color: green;
+        }
+        #p1{
+            color: blue;
+        }
+
+        /*行内> id选择器> 类选择器> 元素选择器> 通配选择器*/
+
+    </style>
+</head>
+<body>
+<div>
+    <p class="p1" id="p1" style="color: blueviolet">Lorem ipsum dolor.</p>
+    <p class="p2">Aliquam, ipsum, sed!</p>
+    <p class="p3">Laboriosam similique, tempora.</p>
+</div>
+</body>
+</html>

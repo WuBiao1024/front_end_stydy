@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式的魅力</title>
+</head>
+<body>
+<script type="text/javascript">
+    let hd = 'skdjnajkh2j3kjhd93483bjbq34bh42349234h';
+
+    // isNaN() not a number
+    //需求： 提取数字,组成字符串
+    let arr = [...hd]
+    let numberArr = arr.filter(item => !Number.isNaN(parseInt(item)))
+    let numStr = numberArr.join('')
+    console.log(numStr);
+
+    //一行代码
+    console.log(hd.match(/\d/g).join(''))
+
+
+
+</script>
+</body>
+</html>

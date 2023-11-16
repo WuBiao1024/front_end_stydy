@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>箭头函数</title>
+</head>
+<body>
+<script type="text/javascript">
+  /*使用箭头函数的注意事项：
+  * （1）箭头函数没有自己的this对象（详见下文）。
+  * （2）不可以当作构造函数，也就是说，不可以对箭头函数使用new命令，否则会抛出一个错误。
+  * （3）不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。
+  * （4）不可以使用yield命令，因此箭头函数不能用作 Generator 函数。
+  * */
+
+  /*
+  * 1.箭头函数的参数只有一个的时候，可以直接省略() ，返回值只有一个的时候，可以省略{return 语句}
+  * 2.但是如果返回一个对象，此时不能省略{return 语句},或者加一个括号() 因为js会把对象的{}当作代码块去解析
+  * */
+  // let getTempItem = id => { id: id, name: "Temp" }; // 报错
+  let getTempItem = id => ({ id: id, name: "Temp" }); // 不报错
+
+
+  // 箭头函数可以与变量解构结合使用。
+  const full = ({ first, last }) => first + ' ' + last;
+  // 等同于
+  function full(person) {
+    return person.first + ' ' + person.last;
+  }
+
+
+
+
+</script>
+</body>
+</html>

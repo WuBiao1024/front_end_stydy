@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 外部框架 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>   
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.js"></script>
+
+    <!-- 问题： 泄露变量到windows上 比如jQuery中的 $ -->
+    <!-- 自己的js文件 -->
+    <script src="IIFE/01-IIFE.js"></script>
+
+    <script>
+        const str = _.join(['hahah','wubiao','前端'],'-')
+        console.log(str);
+    </script>
+    
+
+    
+</body>
+</html>

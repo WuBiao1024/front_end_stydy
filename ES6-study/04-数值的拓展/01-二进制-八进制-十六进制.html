@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二进制和八进制的表示</title>
+</head>
+<body>
+  <script type="text/javascript">
+    //二进制
+    let n1 = 0B10001010
+    console.log(n1);//138
+
+    let n2 =0O3245616
+    console.log(n2);//871310
+
+    let n3 = 0X23487ABD//
+    console.log(n3)
+
+    //使用Number将其它进制的数值转化为十进制
+    console.log(Number('0B10001010'));//138
+
+    //数值分隔符
+    let budget = 1_000_000_000
+
+    /*数值分隔符有几个使用注意点。
+        不能放在数值的最前面（leading）或最后面（trailing）。
+        不能两个或两个以上的分隔符连在一起。
+        小数点的前后不能有分隔符。
+        科学计数法里面，表示指数的e或E前后不能有分隔符.
+        将字符串转为数值的时候，Number、parseInt、parseFloat都不支持下划线数字分隔符
+     */
+
+
+    // 全部报错
+/*    3_.141
+    3._141
+    1_e12
+    1e_12
+    123__456
+    _1464301
+    1464301_*/
+
+  </script>
+</body>
+</html>

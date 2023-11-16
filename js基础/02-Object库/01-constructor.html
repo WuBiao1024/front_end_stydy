@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>constructor</title>
+</head>
+<body>
+<script type="text/javascript">
+    function P(){}
+
+    var p = new P()
+
+    /*console.log(p.constructor === P);//true
+    console.log(p.constructor === P.prototype.constructor);//true
+    console.log(p.hasOwnProperty(constructor));//false*/
+
+    //p的构造函数是P,不是Array
+    // console.log(p.constructor === Array);//false
+
+
+    //修改对象的原型对象(prototype)的时候，应该同步修改原型对象的构造函数(prototype.constructor)
+    function Person(name){
+        this.name = name
+    }
+    console.log(Person.prototype.constructor === Person);//true
+
+    //修改原型对象
+    Person.prototype = {
+        method:function (){}
+    }
+
+    console.log(Person.prototype.constructor === Person);//false
+    console.log(Person.prototype.constructor === Object);//true
+
+   // 所以，修改原型对象时，一般要同时修改constructor属性的指向。
+    // 坏的写法
+    /*C.prototype = {
+        method1: function (...) { ... },
+        // ...
+    };
+
+    // 好的写法
+    C.prototype = {
+        constructor: C,
+        method1: function (...) { ... },
+        // ...
+    };
+
+    // 更好的写法
+    C.prototype.method1 = function (...) { ... };*/
+
+
+</script>
+</body>
+</html>

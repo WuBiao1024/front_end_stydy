@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节流</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+    function throttle(func, delay) {
+        let canRun = true;
+        return function () {
+            if (!canRun) return;
+            canRun = false;
+            setTimeout(function () {
+                func();
+                canRun = true;
+            }, delay);
+        };
+    }
+
+    function handleResize() {
+        console.log("Window resized");
+        // 在这里执行适应窗口大小变化的逻辑
+    }
+
+    const throttledResize = throttle(handleResize, 500); // 300毫秒的节流间隔
+
+    window.addEventListener("resize", throttledResize);
+</script>
+<h3>调整窗口大小查看控制台输出效果</h3>
+</body>
+</html>

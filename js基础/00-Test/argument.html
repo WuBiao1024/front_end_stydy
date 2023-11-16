@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function test(){
+    console.log(arguments);
+    return arguments;
+  }
+  let a = test(1,2,3,4,5)
+  /*
+  arguments 参数：
+  * arguments是一个具有length属性的对象
+  * 1. 可以使用Array.from将a转化为真正的数组
+  * 2. 可以是用解构转换为数组[...arguments]
+  * 3. 可以使用Array.prototype.slice.call(arguments,1,2)
+  * */
+
+</script>
+
+</body>
+</html>

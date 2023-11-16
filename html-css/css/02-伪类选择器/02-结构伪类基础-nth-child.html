@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>结构伪类</title>
+    <style>
+
+        /*一、 div p:first-child { !*后代选择+结构  两种选择器之间是且的关系*!
+             color: red;
+         }*/
+
+        /* 二、结构2 谁也选不中 p:first-child看作整体*/
+        /*div > p:first-child {
+            color: red;
+        }*/
+
+        /*三、参数是(an + b) n>=0 位置不可交换*/
+        /*div *:nth-child(2n) {
+            color: red;
+        }
+        div *:nth-child(2n+1){
+            color: blue;
+        }*/
+
+        /*四、参数还是 (an + b) n>=0 位置不可交换*/
+        .a:nth-of-type(2){
+            color: #ff4a7b;
+        }
+        p:nth-of-type(3){
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<!--结构1-->
+<!--<div>
+  <p class="p1">Lorem ipsum dolor.</p>
+  <p class="p2">Ea, iusto unde.</p>
+  <p class="p3">Illo, nobis pariatur?</p>
+  <p class="p4">Libero, nisi, similique.</p>
+  <p class="p5">Accusantium, cum, ipsam.</p>
+</div>-->
+
+
+<div>
+    <span class="a">Lorem ipsum dolor.</span>
+    <p class="a">Ea, iusto unde.</p>
+    <p class="a">Ea, iusto unde.</p>
+    <p class="a">Illo, nobis pariatur?</p>
+    <p class="a">Libero, nisi, similique.</p>
+    <span class="a">Lorem ipsum.</span>
+    <p class="a">Accusantium, cum, 5.</p>
+    <p class="a">Accusantium, cum, ipsam.</p>
+</div>
+
+</body>
+</html>

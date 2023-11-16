@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>结构伪类</title>
+    <style>
+        /*选中div 中的所有子代p（ 一代）*/
+        /*div>p{
+            color: #ff4a7b;
+        }*/
+
+        /*可以选中id = 1*/
+       /* div>p:first-of-type{
+            color: #ff4a7b;
+        }*/
+
+        /*不能选中*/
+        /*div>p:first-child{
+            color: #ff4a7b;
+        }*/
+
+        /*div后代中的 p元素 同时p必须要是奇数的孩子*/
+        div p:nth-child(2n+1){
+            color: #ff4a7b;
+        }
+
+        /*div后代中的前两个p*/
+        div p:nth-of-type(-n+2){
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <span class="a">Lorem ipsum dolor.</span>
+    <p class="a" id="1">Ea, iusto unde.</p>
+    <p class="a">Ea, iusto unde.</p>
+    <p class="a">Illo, nobis pariatur?</p>
+    <a href="#">点我</a>
+    <div>
+        <p>Lorem.</p>
+        <p>Veniam!</p>
+        <p>Accusamus?</p>
+        <p>Possimus.</p>
+        <p>Delectus?</p>
+    </div>
+    <p class="a">Libero, nisi, similique.</p>
+    <span class="a">Lorem ipsum.</span>
+    <p class="a">Accusantium, cum, 5.</p>
+    <p class="a">Accusantium, cum, ipsam.</p>
+</div>
+
+</body>
+</html>

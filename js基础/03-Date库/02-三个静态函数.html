@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date的静态函数</title>
+</head>
+<body>
+<script type="text/javascript">
+  //`Date.now`方法返回当前时间距离时间零点（1970年1月1日 00:00:00 UTC）的毫秒数，相当于 Unix 时间戳乘以1000。
+  Date.now()
+  //1692546104167
+
+  Date.parse('2023/8/21')
+  Date.parse('2023-8-21')
+  Date.parse('2023-FEB-15')
+  Date.parse('FEB, 15, 2023')
+  Date.parse('FEB 15, 2023')
+  Date.parse('February, 15, 2023')
+  Date.parse('February 15, 2023')
+  Date.parse('15 Feb 2023')
+  Date.parse('15, February, 2023')
+  //1692547200000
+
+
+
+  /*Date.UTC方法接受年、月、日等变量作为参数，返回该时
+  间距离时间零点（1970年1月1日 00:00:00 UTC）的毫秒数。
+
+  该方法的参数用法与Date构造函数完全一致，比如月从0
+  开始计算，日期从1开始计算。区别在于Date.UTC方法的参数，
+  会被解释为 UTC 时间（世界标准时间），Date构造函数的
+  参数会被解释为当前时区的时间。*/
+  /*中国标准时间比世界标准时间快8小时*/
+  /*UTC函数无法解析parse能解析的字串*/
+  let utcNow = Date.UTC(2023,7,15,8,12,10);
+  console.log(utcNow);
+
+  console.log(Date.parse('2023/8/21'))
+
+  //Date.parse()不能解析时间戳
+  //console.log(Date.parse(1692547200000))//NaN
+
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型对象</title>
+</head>
+<body>
+<script type="text/javascript">
+  function Cat(name){
+    this.name = name
+    this.color = "init"
+  }
+
+  function Dog(name){
+    this.name = name
+  }
+  Dog.prototype.color = 'Black'
+  Dog.prototype.walk = function (){
+    console.log(this.name + "正在走路")
+  }
+  Cat.prototype.color = 'White'
+
+  var cat = new Cat("小猫")
+  var dog = new Dog("小狗")
+
+  console.log(cat.color);//init
+
+  console.log(dog.__proto__.color);//Black
+  console.log(dog.color);//Black
+  dog.walk()
+
+  // console.log(Object.getPrototypeOf(Dog.prototype))
+  /*
+  * 当我们读取对象的属性的时候，对象优先在自己身寻找, 如果没有找到,
+  * 就会去自己的原型对象身上寻找，如果还没有找到，就继续去原型对象的
+  * 原型身上去找，一直找到OBject.prototype,还没有找到就返回undefined,
+  * 如果有同名的情况，就叫做覆盖。 读取对象的属性时，寻找的这条链就是原型链。
+  * */
+
+  //原型链
+  var MyArray = function () {};
+
+  MyArray.prototype = new Array();
+  MyArray.prototype.constructor = MyArray;
+
+  var mine = new MyArray();
+  mine.push(1, 2, 3);
+  mine.length // 3
+  mine instanceof Array // true
+
+
+</script>
+
+</body>
+</html>

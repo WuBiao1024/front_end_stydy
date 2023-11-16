@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串新增的方法</title>
+</head>
+<body>
+
+<script type="text/javascript">
+   let str = 'Hello Word!'
+   str.indexOf('!');//10
+
+   //新增三个方法代替
+   let b1 = str.includes('llo ')
+   let b2 = str.startsWith('hello ')
+   let b3 = str.endsWith('!')
+   //true
+   //repeat()
+   console.log('test'.repeat(2));
+
+   //padEnd(补全尾部) padStart(补全头部)  不会影响原来的数组
+   str.padEnd(20,'end');//'Hello Word!endendend'
+   str.padStart(20,'start')//'startstarHello Word!'
+
+   /*用法
+   * 1. 补全位数
+   * 2. 提示字符串
+   * */
+
+   '1'.padStart(10,'0')
+   '231'.padStart(10,'0')
+   '24531'.padStart(10,'0')
+
+   // 提示日期
+    '12'.padStart(10,'YYYY-MM-DD')
+
+
+</script>
+
+</body>
+</html>

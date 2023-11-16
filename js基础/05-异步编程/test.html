@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    function debounce(func, delay) {
+      let timer;
+      return function() {
+        clearTimeout(timer);
+        timer = setTimeout(func, delay);
+      };
+    }
+
+    function search() {
+      console.log("Performing search...");
+      // 实际的搜索逻辑在这里
+    }
+
+    const debouncedSearch = debounce(search, 300); // 300毫秒的防抖延迟
+
+  </script>
+</head>
+<body>
+<input type="text" oninput="debouncedSearch()">
+</body>
+</html>

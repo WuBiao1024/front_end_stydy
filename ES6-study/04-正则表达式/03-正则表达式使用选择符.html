@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式使用选择符</title>
+</head>
+<body>
+<div class="myDiv">Hello WuBiao</div>
+<script type="text/javascript">
+/*    let hd = 'asdf123';
+    console.log(/a|b/.test(hd));//因为有a true
+    console.log(/[ma]/.test(hd));//因为有a true
+    console.log(/uuua|@/.test('aaauuua'))*/
+
+    let tel = 'w010-77528855qwe';
+    /*说明：
+    * | 的两侧会被看作两个整体
+    * \ 是一个转移字符
+    * \d 代表数字
+    * {7,8} 代表数字的位数
+    * ()元
+    * */
+    console.log(/010\-\d{7,8}|020\-\d{7,8}/.test('010'));
+    console.log(/(010|020)\-\d{7,8}/.test(tel));
+
+</script>
+</body>
+</html>

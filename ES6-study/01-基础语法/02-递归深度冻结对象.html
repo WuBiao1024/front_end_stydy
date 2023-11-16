@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>递归深度冻结对象</title>
+</head>
+<body>
+<script type="text/javascript">
+
+  let obj = {
+    name:'wubiao',
+    job:{
+      salary:'20k',
+      startTime:Date()
+    }
+  }
+  let freezeObjDeep = function(obj){
+      /*
+      * Object.freeze()默认只能冻结对象的一层数据，如果想要深度冻结对象的数据，可以使用函数的递归调用
+      * 去实现对象深度冻结。
+      * */
+    Object.freeze(obj);
+    //冻结可枚举的属性
+    Object.keys(obj).forEach((item)=>{
+      if(obj[item] instanceof Object){
+        freezeObjDeep(obj[item])
+      }
+    })
+  }
+
+  freezeObjDeep(obj)
+
+
+
+</script>
+</body>
+</html>

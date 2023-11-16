@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>兄弟选择器</title>
+    <style>
+        /*具有class 属性的元素 */
+        [class] {
+            color: orange;
+        }
+        /*具有class 属性 且值为div1 的元素 */
+        [class="div1"] {
+            color: red;
+        }
+
+        /*具有class 属性 且属性值以my开头 */
+        [class^="my"] {
+            color: orchid;
+        }
+        /*具有id 属性 且属性值以end结尾 */
+        [id$="end"] {
+            color: yellowgreen;
+        }
+
+        /*具有id 属性 且属性值包含haha */
+        [id*="haha"] {
+            color: green;
+        }
+
+    </style>
+</head>
+<body>
+<div class="div1">Lorem ipsum.</div>
+<div class="div2" id="div2">Facere, nulla!</div>
+<div class="my-div" id="div5">Facere, nulla!</div>
+<div id="div3">Maxime, praesentium.</div>
+<div id="div4-end">Iure, voluptatibus?</div>
+<div id="haha1">Lorem ipsum.</div>
+<div id="haha2">Architecto, iure!</div>
+
+</body>
+</html>

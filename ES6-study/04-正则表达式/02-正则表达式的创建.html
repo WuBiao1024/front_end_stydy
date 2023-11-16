@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式的创建</title>
+</head>
+<body>
+<div class="myDiv">Hello WuBiao</div>
+<script type="text/javascript">
+    let hd = 'skdjnjkh2uj3kjhd9u3483ubjbq34bh42349234h';
+
+    console.log('-使用字面量创建正则表达式-');
+    let reg = /u/
+    let reg1 = /@/
+    let a = 'u'
+    console.log(reg.test(hd));
+    console.log(reg1.test(hd));
+    console.log(/a/.test(hd));//不能直接放置变量
+    console.log(eval(`/${a}/`).test(hd));//使用eval和模板字符串放置变量
+
+    //字母数字下划线全部替换为@
+    console.log('asd34_'.replace(/\w/g, '@'));
+
+    console.log('-使用对象创建正则表达式-');
+    let reg2 = new RegExp("u", "g")
+    console.log(reg2.test(hd));
+
+
+    //小案例
+    let con = prompt('请输入要检测的内容,支持正则表达式')////接受一个用户输入的字符串，传递给con
+    let reg3 = new RegExp(con, 'g')
+    let myDiv = document.querySelector('.myDiv')
+    myDiv.innerHTML = myDiv.innerHTML.replace(reg3, search => {
+        return `<span style="color: red;">${search}</span>`
+    })
+
+
+</script>
+</body>
+</html>

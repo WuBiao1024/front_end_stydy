@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<node>
+    <to>Rock</to>
+    <from>good</from>
+    <heading>Fine</heading>
+    <content>How are you?</content>
+</node>

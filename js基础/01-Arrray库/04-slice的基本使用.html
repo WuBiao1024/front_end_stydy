@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+
+<script>
+    var arr = [1,4,3,6,4,8,2,4,6]
+
+    //使用slice()（不传递参数）可以拷贝一份新的数组，原数组不会发生改变。
+    var arr1 = arr.slice()
+    console.log(arr1===arr);//false
+
+    //截取一段数组
+    var arr2 = arr.slice(1,4)
+    console.log(arr2)//[4,3,6]
+
+    //将类似数组的对象转化为数组
+    var obj = {
+        length:2,
+        0:'a',
+        1:'b',
+    }
+    var objArr = Array.prototype.slice.call(obj)
+    console.log(objArr);
+</script>
+</body>
+</html>

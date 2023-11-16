@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式转义</title>
+</head>
+<body>
+<div class="myDiv">Hello WuBiao</div>
+<script type="text/javascript">
+
+    /*
+    * . 的两层含义：
+    * 1. 除了换行以外的任何字符（优先）
+    * 2. 普通的含义
+    *
+    * 使用\ 转义把.转义位普通的.
+    * */
+
+
+    console.log(/\d+\.\d+/.test(String(123456)))
+    console.log(/\d+.\d+/.test(String(123456)))
+
+
+
+</script>
+</body>
+</html>

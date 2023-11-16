@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zn-CH">
+<head>
+    <meta charset="UTF-8">
+    <title>伪元素选择器</title>
+    <style>
+        /*div中的第一个文字*/
+        div::first-letter{
+            color: #ff4a7b;
+            font-size: 20px;
+        }
+        /*第一行*/
+        div::first-line{
+            color: blue;
+        }
+        /*div中的被鼠标选中的文字*/
+        div::selection{
+            color: red;
+
+        }
+        /*input中的提示文字*/
+        input::placeholder{
+            color:deeppink;
+        }
+        /*选中p中的开始元素的位置，创建一个子元素 鼠标不能选中￥*/
+        p::before{
+            content: "￥";
+        }
+        p::after{
+            content: ".00";
+        }
+
+    </style>
+</head>
+<body>
+
+<div lang="en">Rock study css</div>
+<div>洛克学习 css</div>
+<div lang="test">洛克学习 css Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, unde, voluptatem. Accusantium, aliquid aspernatur, dolorum error eum itaque laboriosam minus molestiae officiis perspiciatis qui, quisquam quod similique suscipit ut velit!</div>
+<label>
+    账号
+    <input type="text" placeholder="请输入账号">
+</label>
+<p>100</p>
+<p>200</p>
+<p>300</p>
+<p>400</p>
+<p>500</p>
+</body>
+</html>

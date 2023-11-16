@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>几个关键问题</title>
+</head>
+<body>
+<script type="text/javascript">
+    //一、如何改变Promise对象的状态
+    //  1. resolve pending ===> fulfilled
+    //  2. reject  pending ===> rejected
+    //  3. throw 抛出错误
+    const p = new Promise((resolve, reject) => {
+        // resolve('ok')
+        setTimeout(() => resolve('ok'), 1000)
+        // reject('No')
+        // throw new Error('出错啦')
+    })
+
+    //    二、 Promise指定多个回调，状态改变时，都会回调吗
+    //     回答：都会
+    /* p.then(value => console.log(value))
+     p.then(value => alert(value))*/
+
+    //     三、promise 的状态改变和回调函数的执行顺序
+    /*
+    * 1.执行顺序: 如果promise中没有异步任务，那就是先改变promise的状态，再执行回调
+    * ,如果promise中有异步任务，那就是先执行回调，再改变promise的状态(实例场景用的居多)
+    * 2. 如何先改变状态再执行回调
+    *   （1）直接在执行器中调用resolve/reject
+    *    (2) 延长更长的时间再调用then 比如上面例子中then的调用时间指定为2秒
+    * 3.什么时候才能拿到数据（回调什么时候执行）
+    *    (1)如果先指定回调，当状态发生改变的时候，回调函数就会调用，得到数据。
+    *    (2)如果先改变状态，那当指定回调时,回调函数就会调用,的到回调
+    * */
+    let result = p.then(value => {
+        //console.log(value);
+        // throw new Error('出错啦')
+        // return value
+        // return 06-Promise.reject("失败")
+        return Promise.resolve('success')
+    }, reason => {
+        console.log(reason);
+    })
+
+    //四、Promise的then方法的返回值
+    /*
+    * Promise的then方法的返回值也是一个Promise对象，返回值由then指定的回调决定：
+    *   1. 抛出异常 promise状态为rejected ,结果为错误的对象
+    *   2. 返回一个非promise对象 promise对象状态为fulfilled 结果为返回值
+    *   2. 返回一个promise对象 promise对象就是返回的对象
+    * */
+
+    //代码在上面
+
+    //五、promise串联多个回调
+    /*p
+        .then(val => {
+            console.log(val);
+            return 06-Promise.resolve("p.then成功")
+        })
+        .then(value => {
+            console.log(value);//p.then成功
+        })
+        .then(value => {
+            console.log(value);//undefined
+        })*/
+
+    //六、promise 的异常穿透 (任何一个then回调的的promise执行失败，结尾的catch都可以捕获到)
+    /*p
+        .then(val => {
+            console.log(val);
+            // throw new Error('失败')
+            return 06-Promise.reject("p.then失败")
+        })
+        .then(value => {
+            console.log(value);//p.then成功
+        })
+        .then(value => {
+            console.log(value);//undefined
+        })
+        .catch(reason => console.warn(reason))*/
+
+    //七、中断promise链条
+    p
+        .then(val => {
+            console.log(val);
+            return Promise.resolve("p.then成功")
+        })
+        .then(value => {
+            console.log(value);//p.then成功
+            //有且只有一种方法，返回一个pending状态的Promise对象
+            return new Promise(()=>{})
+        })
+        .then(value => {
+            console.log(value);//undefined
+        })
+        .catch(reason => console.warn(reason))
+
+
+</script>
+
+</body>
+</html>

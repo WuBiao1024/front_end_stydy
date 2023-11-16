@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        div > a {
+            color: red;
+        }
+
+        div > p >a{
+            color: blue;
+        }
+        /*后代+子代*/
+        div .foot > a{
+            color: green;
+        }
+        /*交集*/
+        /*div.foot >a{
+            color: green;
+        }*/
+        /*子代（一代）*/
+        /*.foot > a{
+            color: green;
+        }*/
+    </style>
+</head>
+<body>
+<h1>子代选择器(一代)</h1>
+<div>
+    <a href="#">Lorem.</a>
+    <a href="#">Lorem.</a>
+    <a href="#">Lorem.</a>
+    <p>
+        <a href="#">lorem</a>
+        <div class="foot" >
+            <a href="#">Lorem.</a>
+        </div>
+    </p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise-Api-all && race</title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+    const p1 = new Promise((resolve) => {
+        setTimeout(() => {
+            resolve('p1')
+        }, 2000)
+    })
+    const p2 = Promise.resolve("p2")
+    const p3 = Promise.reject("p3")
+    const p4 = Promise.resolve("p4")
+
+    p3.catch(reason => {
+        console.log(reason);
+    })
+    //all(arr数组)
+    /*
+    * promise对象全部执行成功的时候，返回结果为一个成功的promise对象，结果为数组，由参数里面promise 构成
+    * 如果有一个失败，就会返回第一个是失败的promise对象。
+    * */
+    const resultFail = Promise.all([p1, p2, p3])//返回状态为失败的promise对象，promiseResult值为失败p的值
+    const resultSuccess = Promise.all([p1, p2, p4])
+    resultFail.catch(reason => {
+        console.log(reason);
+    })
+
+    console.log(resultFail, resultSuccess)
+
+
+    //race(arr数组)
+    /*返回第一个完成的promised对象*/
+    /*const recePromise = Promise.race([p1,p2,p3,p4])
+    console.log(recePromise);*/
+
+
+</script>
+
+</body>
+</html>

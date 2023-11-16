@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ceil和floor</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    //Math.abs 绝对值
+    let c = Math.abs(-3.5)
+    console.log(c);
+
+    //数值取整数部分
+    console.log(getInteger(-2.8));
+    console.log(getInteger(6.8));
+
+    //Math.ceil 向上取整 Math.floor向下取证
+    function getInteger(val) {
+        return val < 0 ? Math.ceil(val) : Math.floor(val)
+    }
+
+    //Math.round方法用于四舍五入。
+
+    x = 0.5
+    Math.round(0.1) // 0
+    Math.round(0.5) // 1
+    Math.round(0.6) // 1
+
+    // 等同于
+    Math.floor(x + 0.5)
+    // 注意，它对负数的处理（主要是对0.5的处理）。
+
+    Math.round(-1.1) // -1
+    Math.round(-1.5) // -1
+    Math.round(-1.6) // -2
+
+    //Math.pow方法返回以第一个参数为底数、第二个参数为指数的幂运算值。
+    // 等同于 2 ** 2
+    Math.pow(2, 2) // 4
+    // 等同于 2 ** 3
+    Math.pow(2, 3) // 8
+
+    // Math.sqrt方法返回参数值的平方根。如果参数是一个负值，则返回NaN。
+    Math.sqrt(4) // 2
+    Math.sqrt(-4) // NaN
+
+    //Math.random()返回0到1之间的一个伪随机数 [0,1)
+    // 生成一个 [50,100] 的随机数
+    var random = Math.floor(50 * (1 + Math.random()))// 0.7151307314634323
+    console.log(random);
+
+</script>
+
+</body>
+</html>

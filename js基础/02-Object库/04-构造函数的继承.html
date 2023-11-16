@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数的继承</title>
+</head>
+<body>
+<script type="text/javascript">
+    //让一个构造函数继承另一个构造函数，是非常常见的需求
+    let Shape = function (x,y){
+        this.x = x
+        this.y = y
+    }
+    Shape.prototype.moved = function (x,y){
+        this.x += x
+        this.y += y
+        console.log("Shape moved!");
+    }
+
+    //第一步，子类构造函数调用父类的构造函数
+    let Rectangle = function (x,y){
+        Shape.call(this,x,y)
+    }
+
+    //另一种写法
+    /*let Rectangle = function (){
+        this.base = Shape
+        this.base()
+    }*/
+
+    //第二步，子类继承父类的原型
+    Rectangle.prototype= Object.create(Shape.prototype);
+    //修改原型链一定要记得把构造函数改回来
+    Rectangle.prototype.constructor = Rectangle
+
+    //采用这样的写法以后，instanceof运算符会对子类和父类的构造函数，都返回true。
+    let rectangle = new Rectangle(2,3);
+
+    console.log(rectangle instanceof Rectangle);//true
+    console.log(rectangle instanceof Shape);//true
+
+    rectangle.moved(2,3)//Shape moved!
+    console.log(rectangle)//Rectangle{x: 4, y: 6}
+
+
+    /*多继承*/
+    let M1 = function (){
+        this.hello = "hello"
+    }
+    let M2 = function (){
+        this.word = 'word '
+    }
+
+    let S = function (){
+        //调用父元素的构造函数
+        M1.call(this)
+        M2.call(this)
+    }
+
+    S.prototype = Object.create(M1.prototype)
+    // 在S的继承链上加入 M2
+    Object.assign(S.prototype,M2.prototype)
+
+    S.prototype.constructor = S
+
+    let s = new S();
+    console.log(s.hello,s.word)//hello word
+</script>
+
+
+</body>
+</html>

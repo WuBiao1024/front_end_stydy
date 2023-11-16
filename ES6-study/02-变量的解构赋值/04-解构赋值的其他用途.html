@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>解构赋值的其它用途</title>
+</head>
+<body>
+<script type="text/javascript">
+    //1.交换变量的值
+    let x = 1;
+    let y = 2;
+    [x, y] = [y, x]
+
+    //2.从函数返回多个值
+    function getArray() {
+        return [1, 2, 3, 4]
+    }
+
+    let [a, b, c, d] = getArray()
+
+    function getObj() {
+        return {a: 1, b: 2, c: 3};
+    }
+    let {j,k,l}=getObj()
+
+    //3.函数参数的定义
+    function fn1([a,b,c]){}//参数是有序的
+    function fn2({a,b,c}){}//参数是无序的,但是需要属性名正确
+
+    //4.提取Json中的数据
+    let jsonData = {
+        id:42,
+        status:"OK",
+        data:[666,888]
+    };
+    let {id,status,data} = jsonData;
+
+    console.log(id,status,data)
+
+    //遍历map
+    let map = new Map();
+    map.set('key1','hello');
+    map.set('key2','word');
+
+    //一起获取
+    for (let [key,valve] of map){
+        console.log(`${key} is ${valve}`)
+    }
+    console.log('-----------------');
+    console.log('获取键名');
+    console.log('-----------------');
+
+
+    //获取键名
+    for (let {0:key1,} of map) {
+        console.log(key1);
+    }
+    console.log('-----------------');
+    console.log('获取值');
+    console.log('-----------------');
+
+    for (let [,value] of map) {
+        console.log(value);
+    }
+
+    console.log('-----------------');
+    console.log('输入模块的指定方法');
+    console.log('-----------------');
+
+    //7. 加载模块时解构赋值
+    // const {SourceMapConsumer,SourceNode} = require('source-map')
+
+
+</script>
+</body>
+</html>

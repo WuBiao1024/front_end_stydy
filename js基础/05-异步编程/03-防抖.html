@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>防抖</title>
+</head>
+<body>
+<h2>简单实现</h2>
+<input type="text" oninput="debounceSearch()"/>
+<hr/>
+<h2>立即执行一次</h2>
+<input type="text" oninput="debounceImmediateSearch()"/>
+
+<script type="text/javascript">
+
+    function debounce(func, delay) {
+        let timerId;
+        return function () {
+            let that = this //保存this
+            let args = arguments;//实参
+            clearTimeout(timerId);
+            timerId = setTimeout(() => {
+                func.apply(that, args)
+            }, delay)
+        }
+    }
+
+    function search() {
+        console.log('search...');
+        //搜索逻辑。。。
+    }
+
+    //简单实现，没有立即执行
+    const debounceSearch = debounce(search, 300)
+
+    //立即执行
+    function debounceImmediate(func, delay, immediate) {
+        let timerId;
+        return function () {
+            let that = this
+            let args = arguments
+
+            if (timerId) {
+                clearTimeout(timerId)
+            }
+
+            if (immediate) {
+                let isFirst = !timerId//是否是第一次执行
+
+                timerId = setTimeout(() => {
+                    timerId = null //设置为空，可以再次触发
+                }, delay)
+
+                if (isFirst) {
+                    func.apply(that, args);//执行
+                }
+
+            } else {
+                timerId = setTimeout(() => {
+                    func.apply(that, args);
+                }, delay);
+            }
+
+        };
+    }
+
+    const debounceImmediateSearch = debounceImmediate(search, 500, true)
+
+</script>
+
+</body>
+</html>

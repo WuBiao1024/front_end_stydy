@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象的拷贝</title>
+</head>
+<body>
+<script>
+
+    /*    如果要拷贝一个对象，需要做到下面两件事情。
+    -   确保拷贝后的对象，与原对象具有同样的原型。
+    -   确保拷贝后的对象，与原对象具有同样的实例属性。
+    下面就是根据上面两点，实现的对象拷贝函数。*/
+
+    //基本写法
+    function copyObj(origin) {
+        //具有相同的原型
+        var obj = Object.create(Object.getPrototypeOf(origin));
+        //拷贝所有的属性
+        copyOwnProperties(obj, origin)
+        return obj
+
+    }
+
+    function copyOwnProperties(target, source) {
+        Object
+            .getOwnPropertyNames(source)
+            .forEach( (propKey)=> {
+                //获取属性描述对象
+                var desc = Object.getOwnPropertyDescriptor(source, propKey);
+                Object.defineProperty(target, propKey, desc)
+            });
+        return target;
+    }
+
+    //另一种更简单的写法，是利用 ES2017 才引入标准的Object.getOwnPropertyDescriptors方法。
+    function copyObject(orig) {
+        return Object.create(
+            Object.getPrototypeOf(orig),
+            Object.getOwnPropertyDescriptors(orig)
+        );
+    }
+
+    var obj1 = {
+        name:'WuBiao',
+        career:'前端开发工程师',
+        sayHello:function (){
+            console.log(`hello! I'm ${this.name}`)
+        }
+
+    }
+    var obj2 = copyObj(obj1)
+   obj2.sayHello();
+
+    // obj1 === obj2
+
+    /*
+    *拷贝对象需要做两件事
+    * 1. 让新对象的原型指向老对象的原型
+    * 2. 遍历老对象身上的所有属性，赋值给新对象
+    * */
+
+    function getNewObject(oldObj){
+        //用源对象的原型创建一个新的对象
+        var newobj = Object.create(Object.getPrototypeOf(oldObj))
+
+        //把原始对象的属性拷贝到新的对象身上
+        Object
+            .getOwnPropertyNames(oldObj)
+            .forEach(function (ele){
+                var desc = Object.getOwnPropertyDescriptor(oldObj,ele)
+                Object.defineProperty(newobj,ele,desc)
+            })
+        return newobj
+    }
+
+    var obj3 = getNewObject(obj2)
+
+    // obj3 === obj2 //false
+
+    //新版本写法 ES2017
+    var obj4 = Object.create(obj3.constructor.prototype,Object.getOwnPropertyDescriptors(obj3))
+    console.log(obj4);
+
+    /*
+    * 1. 新对象和老对象具有相同的原型
+    * 2. 新对象和老对象要有相同的属性以及属性值
+    * */
+
+    function cloneObj(obj){
+        // var newObj = Object.create(obj.__proto__)
+        var newObj = Object.create(Object.getPrototypeOf(obj))
+
+        Object
+            .getOwnPropertyNames(obj)
+            .forEach((item)=>{
+                var desc = Object.getOwnPropertyDescriptor(obj,item)
+                Object.defineProperty(newObj,item,desc)
+            })
+        return newObj
+    }
+
+    var obj6 = Object.create(Object.getPrototypeOf(obj1),Object.getOwnPropertyDescriptors(obj))
+
+
+/*    var obj = {
+        a:1,
+        b:2
+    }
+
+    console.log(Object.getOwnPropertyNames(obj));*/
+
+
+</script>
+</body>
+</html>

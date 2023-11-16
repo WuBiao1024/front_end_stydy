@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    //指定要使用的模块规范
+    "module": "commonjs",
+    //指定es版本
+    "target": "es5",
+    // "sourceMap": true
+
+    //指定项目中使用的库比如dom
+    //"lib": ["dom"],//一般不动
+
+    //指定编译后文件所在的目录
+    "outDir": "./dist"
+  },
+  "exclude": [
+    "node_modules"
+  ],
+
+  //**代表任意目录 任意文件
+  //include 包含
+  "include": [
+    "./src/**/*"
+  ],
+  //exclude 不需要被编译的文件
+  //默认值 ["node_modules","bower_component","jspm_packages"]
+  /*"exclude": [
+    //"./src/index.ts/"
+  ],*/
+  //继承一个其它的匹配值文件
+  "extends": [
+
+  ],
+  //要编译的文件
+ /* "files": [
+    "test.ts",
+    "hello.ts"
+  ]*/
+
+
+  //是否移除注释
+  "removeComments": true,
+  //不生成编译后的文件
+  "noEmit": true,
+  //有错误时，不生成编译后的文件
+  //"noEmitOnError": true,
+
+
+}

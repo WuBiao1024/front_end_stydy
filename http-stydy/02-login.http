@@ -1,0 +1,30 @@
+POST /api/user/login HTTP/1.1
+Host: 192.168.1.1
+# MIME 格式
+# image/jpg image/png text/css application/javascript text/plain
+Content-Type: application/x-www-form-urlencoded 
+#base54
+
+loginId=admin&loginPwd=123456
+
+# 写法二
+POST /api/user/login HTTP/1.1
+Host: 192.168.1.1
+# MIME 格式
+# image/jpg image/png text/css application/javascript text/plain
+Content-Type: application/json
+
+{
+    "loginId":"admin",
+    "loginPwd":"123123"
+}
+
+#写法三 文件上传
+Content-Type: appli
+
+
+
+
+
+
+

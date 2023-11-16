@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zn-CH">
+  <head>
+    <meta charset="UTF-8" />
+    <title>iframe</title>
+  </head>
+  <body>
+    <!--    利用iframe 嵌入网页 -->
+    <!--    利用iframe 嵌入广告 -->
+    <!-- <iframe  src="https://www.taobao.com" width="900" height="600" frameborder="2"></iframe> -->
+    <!-- 可以嵌入视频、压缩包(下载)、pdf、图片 等 -->
+    <!-- frameborder 是否显示标签 -->
+    <!-- <iframe src="../logo.png" frameborder="0"></iframe> -->
+
+    <!-- 超链接的target使用 -->
+    <div class="left">
+      <a href="./06-son1.html" target="content">1</a>
+      <a href="./06-son2.html" target="content">2</a>
+    </div>
+    <br />
+     <!--src设置默认页面-->
+    <iframe name="content" frameborder="0" src="./06-son1.html"></iframe>
+    <!-- 和表单的target配合使用 -->
+    <form action="https://so.toutiao.com/search" target="content">
+        <input type="text" name="keyword">
+        <input type="submit" value="搜索">
+    </form>
+
+   
+  </body>
+</html>

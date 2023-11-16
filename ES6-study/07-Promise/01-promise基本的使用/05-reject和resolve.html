@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>reject和resolve</title>
+</head>
+<body>
+<script type="text/javascript">
+    //resolve()
+    //传入非promise对象，返回成功的promise对象
+    const p = Promise.resolve(555)// {<fulfilled>: 555}
+    //传入promise对象，参数的结果决定resolve的结果
+    const p1 = Promise.resolve(new Promise((resolve, reject) => resolve(123)))//{<rejected>: 123}
+    //捕获一下报错
+    p1.catch(reason => console.log(reason))
+
+
+    //reject()
+    //永远是失败的，传入什么 ,失败的结果就是什么
+    const p2 = Promise.reject('123')
+    const p3= Promise.reject(new Promise(resolve => resolve("成功")))
+
+
+
+
+</script>
+
+</body>
+</html>

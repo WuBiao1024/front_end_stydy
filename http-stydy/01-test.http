@@ -1,0 +1,20 @@
+# GET / HTTP/1.1
+# 请求行
+# 请求头
+# a:1
+# b:2
+# c:3
+
+# 两个换行符必须写（空一格）
+# 请求体
+
+
+# method http协议层面，就是语义的区别。请求的语义，指示客户端发起请求的目的
+# get 获取资源
+# post 发送资源
+# delet e 
+# put
+
+GET / HTTP/1.1
+Host: www.taobao.com
+

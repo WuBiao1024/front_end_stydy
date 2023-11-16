@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>...运算符的两种用法-扩展(Spread) && 剩余(Rest)</title>
+</head>
+<body>
+<script type="text/javascript">
+    console.log("======================")
+    console.log('扩展(Spread)')
+    console.log("======================")
+    //基本使用
+    let array = [1, 2, 3, 4, 5, 6];
+    let newArr = ['first', ...array, 'last']
+
+    //以前的写法
+    let newArr1 = []
+    array.forEach(name => {
+        newArr1.push(name)
+    })
+    newArr1.unshift('first')
+    newArr1.push('last')
+
+    //针对对象使用拓展运算符
+    let obj = {name: 'WuBiao', job: "web Dev Engineer", salary: '20k'}
+    let obj1 = {...obj}
+
+    //连接数组
+    let array1 = [...array, ...array]
+
+    //连接对象会自动去重
+    let sex = {sex: 'male'}
+    let obj2 = {...obj, ...obj, ...sex}
+    console.log(obj2);
+
+    //数组去重
+    let fruits = ['apple', 'banana', "apple", 'banana', 'Mango']
+    let fruitsUnique = [...new Set(fruits)]
+    console.log(fruitsUnique);
+
+    // 把数组中的每一项分别当作传递参数给函数
+    const addAll = (a, b, c) => {
+        console.log(a + b + c)
+    }
+    let addArray = [1, 2, 4]
+    addAll(...addArray)
+    //以前的写法
+    addAll.apply(null, addArray)
+
+    //将字符串拆分为字符数组
+    let myString = "Hello,WuBiao!"
+    let myStringArray = [...myString]
+    console.log(myStringArray);
+
+    //类似split
+    let myString1 = "freeCodeCamp";
+    const splitString = myString1.split('');
+    console.log(splitString); // ["f","r","e","e","C","o","d","e","C","a","m","p"]
+
+    console.log("======================")
+    console.log('剩余运算符(rest)')
+    console.log("======================")
+    // rest 运算符允许你将任意数量的参数组合到一个数组中，然后对它们做任何你需要的事情。
+    // 它使用一个数组来表示无限数量的参数。重点。
+
+    const arr = [5, 6, 7, 8, 9];
+    const multiArgsFun = (firstArg, ...otherArgs) => {
+        let arr1 = []
+        // arr.push(otherArgs.map(item => firstArg * item))
+        otherArgs.forEach(item => arr1.push(firstArg * item))
+        return arr1;
+    }
+    console.log(multiArgsFun(arr.shift(), ...arr))
+
+    // const mutiArgs = (firstArg,...otherArgs,oldArgs)=>{}
+    //Rest参数必须是最后一个参数
+
+    const mutiArgs = (firstArg,...otherArgs)=>{
+        console.log(firstArg);//1
+        console.log(otherArgs);//[2,3,4]
+    }
+    mutiArgs(1,2,2,3)
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+  const symbol1 = Symbol();
+  const symbol2 = Symbol();
+  //symbol === symbol2 false
+
+  const foo = Symbol('foo');
+  const foo1 = Symbol('foo1');
+  const obj = {
+    [foo]:'propertyValue1',
+    [foo1]:'propertyValue2',
+    a:'propertyValue2',
+    'b-c' :'propertyValue2'
+  }
+  let refLectArr = Reflect.ownKeys(obj);
+  //相当于
+  let objArr = [...Object.getOwnPropertyNames(obj),...Object.getOwnPropertySymbols(obj)];
+  // Object.getOwnPropertyNames()不能获取Symbol定义的唯一属性。
+  // Object.getOwnPropertySymbols(obj) 只能获取Symbol定义的属性。
+  // Reflect.ownKeys(obj) 获取二者都可以获取。
+
+  //用Symbol消除魔法字符串
+  const obj = {
+    type1:Symbol(),
+    type2:Symbol(),
+    type2:Symbol()
+  }
+
+  function ()
+
+</script>
+
+</body>
+</html>

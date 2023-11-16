@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zn-CH">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock学前端</title>
+    <style>
+        h1{
+            color: red;
+        }
+        /*光的三原色*/
+        .h1{
+            color: rgb(255,0,0);
+        }
+        .h2{
+            color: rgb(0,255,0);
+        }
+        .h3{
+            color: rgb(0%,0%,100%);
+        }
+        /*完全透明*/
+        .rgba{
+            color: rgba(255,0,0,0.5);
+        }
+        .rgb000{
+            color: rgb(0,0,0); /*黑色*/
+        }
+        .rgb2553{
+            color: rgb(255,255,255);/*白色*/
+        }
+
+        .violet{
+            color: rgb(138,43,226)
+        }
+        .HEX{
+            color: #ff0000;
+            /*两两重复可以简写,一旦前三位简写，后面三位也要简写*/
+            /*color: #f00;*/
+        }
+        /*ie不支持hexA*/
+        .HEXA{
+            color: #87ceedff;
+        }
+        /*deg可以省略*/
+        .hsl{
+            /*color: hsl(0,100%,50%);*/
+            /*0% 灰色*/
+            /*100 白色*/
+            color: hsl(14, 100%, 50%);
+        }
+        .hsla{
+            color: hsla(0,100%,50%);
+        }
+    </style>
+</head>
+<body>
+<h1>词语表示</h1>
+<h1>Rock1688学</h1>
+<h1>rgb</h1>
+<h2 class="h1">Lorem.</h2>
+<h2 class="h2">Eveniet!</h2>
+<h2 class="h3">Numquam!</h2>
+<h1>rgba</h1>
+<h2 class="rgba">Rock test</h2>
+
+<hr>
+<hr>
+<h1 class="rgb000">rgb000</h1>
+<h1 class="rgb2553">rgb 255 255 255</h1>
+<hr>
+<h2 class="violet">紫罗兰</h2>
+
+<hr>
+<hr>
+<h1>HEX/HEXA</h1>
+<h2 class="HEX">HEX</h2>
+<h2 class="HEXA">HEXA</h2>
+<hr>
+<hr>
+<h1>hsl表示法</h1>
+<h2 class="hsl">Rock Test</h2>
+<h2 class="hsla">Rock Test</h2>
+</body>
+</html>

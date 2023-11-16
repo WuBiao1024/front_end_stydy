@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zn-CH">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock学前端</title>
+    <style>
+        body{
+            font-size: 20px;
+            font-family: "微软雅黑",serif;
+        }
+        /*利用css的继承特性，可以指定默认的字体大小*/
+        .div1{
+            font-size: 40px;
+            font-family: "楷体",serif;
+        }
+        .div3{
+            font-size: 20px;
+            font-family: "宋体",serif;
+        }
+        .div2{
+            font-size: 30px;
+            font-family: "华文彩云",serif;
+        }
+        .div4{
+            font-size: 16px;
+        }
+        /*使用字体名称的时候了，用英文兼容性更好*/
+        /*serif 衬线*/
+        /*sans-serif 非衬线*/
+        .div6{
+            font-size: 50px;
+            font-family: "STHupo","Microsoft YaHei",serif;
+        }
+
+        .div7{
+            font-size: 50px;
+            font-family: "STHupo","Microsoft YaHei",sans-serif;
+        }
+        .div9{
+            /*斜体 有就用，没有就强制倾斜*/
+            font-style: italic;
+            font-weight: lighter;
+
+        }
+        .div10{
+            font-style: oblique;
+            font-weight: normal;
+        }
+        .div11{
+            /*斜体 有就用，没有就强制倾斜*/
+            font-style: italic;
+            font-weight: bolder;
+
+        }
+        .div12{
+            font-style: oblique;
+            font-weight: bold;
+        }
+
+        .div13{
+            font: bold italic 50px "华文彩云","华文琥珀",sans-serif;
+        }
+    </style>
+</head>
+<body>
+<h1>font-size</h1>
+<div class="div1">Lorem ipsum dolor.</div>
+<div class="div2">Nobis, possimus totam.</div>
+<div class="div3">Amet illum, sequi!</div>
+<div class="div4">Amet illum, sequi!</div>
+<div class="div5">默认</div>
+<hr>
+<hr>
+<h1>font-family</h1>
+<div class="div6">Rock Test</div>Rock Test
+<div class="div7">Rock Test</div>
+<div class="div8">Rock Test</div>
+<hr>
+<hr>
+
+<h1>font-style font-weight</h1>
+<div class="div9">Rock italic</div>
+<div class="div10">Rock oblique</div>
+<div class="div11">Rock test</div>
+<div class="div12">Rock test</div>
+<!--强调-->
+<h1>em强调</h1>
+<em>Rock Test</em>
+
+<hr>
+<hr>
+<h1>复合属性</h1>
+<div class="div13">复合属性</div>
+
+</body>
+</html>

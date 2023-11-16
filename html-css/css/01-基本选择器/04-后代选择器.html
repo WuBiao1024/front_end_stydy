@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--后代选择器后代 包括 儿子 孙子 重孙子-->
+    <!--选择指定元素的符合要求的元素-->
+    <style>
+        div p{
+            color: red;
+        }
+        ul li{
+            color: green;
+        }
+
+        ul .li3{
+            color: yellow;
+        }
+        ul #li4{
+            color: darkmagenta;
+        }
+        ul li a.classA{
+            color: aquamarine;
+        }
+
+
+    </style>
+</head>
+<body>
+<h1>font-end engineer</h1>
+<h1>后代选择器</h1>
+<hr>
+<div class="container">
+    <p class="p1">Lorem ipsum dolor sit amet.</p>
+    <p class="p2">Ad cumque eveniet rerum temporibus!</p>
+</div>
+<hr>
+<ul>
+    <li>Lorem ipsum dolor sit amet.</li>
+    <li>Et exercitationem molestiae nostrum quo?</li>
+    <li class="li3">Deleniti doloremque fugiat quia quisquam.</li>
+    <li id="li4">At doloribus id itaque temporibus.</li>
+    <li><a class="classA" href="#">回到顶部</a></li>
+</ul>
+<hr>
+
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rest运算符</title>
+</head>
+<body>
+<script type="text/javascript">
+    let add = function (...args) {
+        console.log(arguments);//不是一个真正的数组，如果想要使用数组身上的方法, 需要使用Array.from将它转化为数组
+
+        let argArr = Array.from(arguments);
+        console.log(argArr);
+
+        // console.log(arguments);
+        return args.reduce((pre, cur) => pre + cur, 0)
+    }
+
+    console.log(add(1, 2, 3, 4, 5, 6));
+
+    // 注意:
+    // 1.rest 参数之后不能再有其他参数（即只能是最后一个参数），否则会报错。
+    // 2.函数的length属性，不包括 rest 参数
+    /*function f(a, ...b, c) {
+        // ...
+    }*/
+
+    //函数的length属性返回没有指定默认值的参数个数
+    (function (a = 0, b, c) {}).length ;// 0
+    (function (a, b = 1, c) {}).length // 1
+
+    //函数的name属性，返回该函数的函数名。
+    function foo() {}
+    foo.name // "foo"
+
+    let f = function () {};
+
+    // ES5
+    f.name // ""
+
+    // ES6
+    f.name // "f"
+
+
+
+
+
+</script>
+
+</body>
+</html>

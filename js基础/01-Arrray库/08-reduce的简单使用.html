@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reduce</title>
+</head>
+<body>
+<script type="text/javascript">
+    var arr = [1,2,3,4,5,6,7,8,9]
+    var sum = arr.reduce((a,b)=>{
+        return a+b;
+    })
+
+    var sum1 = 0
+    arr.forEach((val)=>{
+        sum1  += val
+    })
+
+    console.log(sum,sum1);
+
+</script>
+</body>
+</html>

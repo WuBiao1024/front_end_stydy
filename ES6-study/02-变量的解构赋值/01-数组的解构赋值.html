@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组的解构赋值</title>
+</head>
+<body>
+<script type="text/javascript">
+    /*  let a = 1;
+      let b = 2;
+      let c = 3;*/
+
+    //本质是一种模式匹配
+    let [a, b, c] = [1, 2, 3]
+
+    let [[foo], [bar], [[baz], bax]] = [['foo'], ['bar'], [['baz'], 'bax']]
+
+    let [, , third] = [, , 'third'];
+
+    let [head, ...tail] = [1, 2, 3, 4]
+    //head 1
+    //tail 2,3,4
+
+    let [x, y, ...z] = ['a']
+    //x  "a"
+    //y  undefined
+    //z  []
+
+    function fn(){
+        console.log(a)
+        return 2
+    }
+
+    //惰性的,惰性的, 只有右边没有值的时候, 才会调用函数
+    let [k=0] = []// 默认值
+    let [t=fn()] = [1]//1
+    let [v=fn()] = []//2
+    let [j=a] = []//a 必须存在
+
+
+
+</script>
+
+</body>
+</html>
