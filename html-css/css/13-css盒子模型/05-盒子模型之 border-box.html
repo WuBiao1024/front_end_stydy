@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <title>Rock学前端</title>
     <style>
+        body{
+            margin: 0;
+        }
         div {
-            box-sizing: content-box; /*默认的黑子模型*/
+            box-sizing: border-box; /*IE怪异盒模型*/
             background: red;
-            width: 500px; /*内容(content)的宽*/
-            height: 500px; /*内容(content)的高*/
+            width: 500px; /*content的width + padding*2 + border*2 */
+            height: 500px;
             padding: 40px;
+            margin: 20px;
             border: solid 10px black;
         }
     </style>

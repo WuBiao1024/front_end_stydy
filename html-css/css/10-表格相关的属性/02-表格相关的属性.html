@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zn-CH">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock学前端</title>
+    <style>
+        table {
+            border: red solid 2px;
+            width: 100%;
+            table-layout: fixed; /*使得每一列间距相等*/
+            /*单元格的距离*/
+            border-spacing: 0;
+            /*合并相邻的单元格的边框*/
+            border-collapse: separate; /*separate 默认不合并， collapse合并*/
+            /*隐藏空的单元格*/
+            empty-cells: hide; /*show 默认值 hide (生效的前提是不能合并边框)*/
+            /*设置表格标题的位置*/
+            caption-side: bottom; /*默认是top*/
+        }
+
+        th, td {
+            border: green solid 2px;
+        }
+        .No {
+            width: 50px;
+            height: 40px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <!--    <table cellpadding="0" cellspacing="0">-->
+    <table>
+        <caption>商品信息</caption>
+        <thead>
+        <tr>
+            <!--            <th width="50">序号</th>-->
+            <th class="No">序号</th>
+            <th>商品名</th>
+            <th>进价</th>
+            <th>售价</th>
+            <th>折扣</th>
+            <th>余量</th>
+            <th>已售</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>保温杯</td>
+            <td>￥19.9</td>
+            <td>￥29.9</td>
+            <td>8折</td>
+            <td>999</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>垃圾袋</td>
+            <td>￥19.9</td>
+            <td>￥29.9</td>
+            <td>8折</td>
+            <td>999</td>
+            <td>444</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>泡面</td>
+            <td>￥19.9</td>
+            <td>￥29.9</td>
+            <td>8折</td>
+            <td>999</td>
+            <td>444</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>遥遥领先</td>
+            <td>￥19.9</td>
+            <td>￥29.9</td>
+            <td>8折</td>
+            <td>999</td>
+            <td>444</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>

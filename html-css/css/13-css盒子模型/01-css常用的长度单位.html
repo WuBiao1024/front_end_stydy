@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zn-CH">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock学前端</title>
+    <style>
+        html {
+            font-size: 25px;
+        }
+
+        .container {
+            font-size: 20px;
+        }
+
+        .div1 {
+            width: 10em;
+            height: 10em; /*200px*/
+            /*font-size: 20px;*/
+            background: deeppink;
+        }
+
+        .div2 {
+            width: 10rem;
+            height: 10rem; /*相对于根元素 html*/
+            background: lime;
+        }
+        .father{
+            width: 500px;
+            height: 500px;
+            background: pink;
+        }
+        .son{
+            width: 50%;
+            height: 50%;
+            background-color: black;
+        }
+        .text{
+            text-indent: 2em;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>长度单位</h1>
+    <div class="div1">
+        <h2>em</h2>
+    </div>
+    <br>
+    <div class="div2">rem</div>
+    <br>
+    <div class="father">
+        <h2> %</h2>
+        <div class="son">
+        </div>
+    </div>
+    <hr>
+    <div class="text">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad dolorem, eos exercitationem expedita harum modi molestiae molestias natus omnis qui similique ut! Aperiam at impedit nihil, qui sunt tempore.
+    </div>
+</div>
+</body>
+</html>

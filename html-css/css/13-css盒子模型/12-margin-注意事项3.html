@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zn-CH">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock学前端</title>
+    <style>
+        .container {
+            width: 500px;
+            height: 500px;
+            background-color: red;
+            margin: 50px;
+        }
+
+        img {
+            width: 500px;
+            margin: 50px;
+        }
+
+        body span:nth-of-type(1) {
+            background-color: lime;
+        }
+
+        /*行内元素的上下margin不生效的， 左右margin是生效的。*/
+        body span:nth-of-type(2) {
+            background-color: skyblue;
+            margin: 300px 20px; /*300px 无效*/
+        }
+
+        body span:nth-of-type(3) {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    I'm Div
+</div>
+<div>div 中的一段文字</div>
+<hr>
+<img src="../../images/blue-bg.png" alt="">
+<hr>
+<span>lorem</span><span>Rock</span><span>Test</span>
+<div>TESTHHHHHHH</div>
+</body>
+</html>
